@@ -1,0 +1,12 @@
+.main {
+  background-color: #e2fdff;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.register {
+  display: flex;
+  justify-content: center;
+}
