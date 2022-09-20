@@ -58,6 +58,7 @@ export const loginUser = async (req, res) => {
 export const logoutUser = (req, res) => {
   try {
     res.clearCookie("session_token");
+    activeUsers.delete(req.body.id);
     res.status(200).send("Successfully logged out!");
   } catch (error) {
     console.error(error);
