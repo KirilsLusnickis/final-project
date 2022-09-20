@@ -1,7 +1,8 @@
 import express from "express";
-import corse from "cors";
+import cors from "cors";
 import dotenv from "dotenv";
-import socket from "socket.io";
+import { Server } from 'socket.io';
+import { createServer } from 'http';
 import connectDB from "../BACKEND/utils/connection.js";
 import authRoute from "../BACKEND/routes/authRoute.js";
 import messageRoute from "../BACKEND/routes/messageRoute.js";
@@ -11,17 +12,19 @@ const port = 3001;
 
 dotenv.config();
 app.use(express.json());
-app.use(corse());
+app.use(cors());
 
 app.use("/api", authRoute);
 app.use("/api", messageRoute);
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
   connectDB();
   console.log(`Server is running on port: ${port}`);
 });
 
-const socketio = socket(server, {
+const server = createServer(app); 
+
+const socketio = new Server(server, {
   cors: {
     origin: "http://localhost:3000",
     credentials: true,
