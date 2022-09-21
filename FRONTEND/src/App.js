@@ -1,17 +1,17 @@
 import './App.css';
 import React  from 'react';
-import TopBar from './Components/topBar/TopBar';
-import {BrowserRouter as Router, Route,} from "react-router-dom"
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import AboutUsPage from './Pages/aboutUsPage/AboutUsPage';
 
 function App() {
   return (
     <Router>
-    <TopBar/>
-      <Router>
-        <Route path="/"/>
-             
-      </Router>
-    </Router>
+    <Routes>
+      
+      <Route path="/" element={<AboutUsPage />} />
+
+    </Routes>
+  </Router>
   );
 }
 
