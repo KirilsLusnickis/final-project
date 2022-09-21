@@ -1,12 +1,38 @@
+* {
+  overflow: hidden;
+}
+
 .main {
   background-color: #e2fdff;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
+
+/* .main {
+    height: 100vh;
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  } */
 
 .register {
   display: flex;
   justify-content: center;
+}
+
+#backgroundVideo {
+  position: fixed;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
