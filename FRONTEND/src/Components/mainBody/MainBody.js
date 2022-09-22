@@ -6,17 +6,10 @@ const MainBody = () => {
   return (
     <div className="mainBody">
       <div className="mainBodyWrapper">
+        <img src="/images/mainBody-image.jpg"></img>
         <div className="mainBodyContainer">
-          <img
-            src="./mainBody-image.jpg"
-            alt="Cinque Terre"
-            width="1000"
-            height="300"
-          ></img>
-          <h1>ABOUT US</h1>
-        </div>
-        <div className="mainBodyContainer2">
-          <p>
+          <h1 className="mainBodyHeader">ABOUT US</h1>
+          <p className="mainBodyText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
             similique rep ellendus magni et aut, ad possimus, illum esse omnis
             culpa est perspiciatis beatae? Reprehenderit incidunt eum dicta
@@ -24,6 +17,7 @@ const MainBody = () => {
           </p>
         </div>
       </div>
+      <div className="mainBodyContainer2"></div>
     </div>
   );
 };

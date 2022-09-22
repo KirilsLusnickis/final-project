@@ -1,9 +1,28 @@
 .mainBody {
-    /* background-image: url('./mainBody-image.jpg'); */
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     object-fit: contain;
+    position: relative;
 }
+
+img {
+    max-width: 100%;
+    height: auto;  
+  }
+
+.mainBodyWrapper {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.mainBodyContainer {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.6vw;
+} 
