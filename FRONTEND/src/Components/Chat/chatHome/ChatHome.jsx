@@ -15,6 +15,7 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
+      <div className={styles.content}>
         <h1>{`CHAT`}</h1>
         <input
           className={styles.input}
@@ -38,6 +39,7 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
         >
           Join Room
         </button>
+      </div>
       </div>
     </div>
   );

@@ -14,6 +14,7 @@
   }
   .formContainer {
     width: 400px;
+    height: 400px;
     margin: 0 auto 10vh auto;
     padding: 3rem;
     background: #5465FF;
@@ -24,6 +25,20 @@
     align-items: center;
     gap: 2rem;
     opacity: 1;
+    animation: rollup 1s ease-in-out;
+  }
+
+  @keyframes rollup {
+    0%{
+      width: 0px;
+      margin-bottom: 500px;
+      opacity: 0;
+    }
+    100%{
+      width: 400px;
+      margin-bottom: 10vh;
+      opacity: 1;
+    }
   }
 
   .formContainer h1{
@@ -41,14 +56,39 @@
 
   .btn {
     width: 100%;
-    background-color: #9BB1FF;
+    background-color: #5465FF;
     padding: 1rem;
     border: 0.15rem solid white;
     border-radius: 1rem;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;  
   }
 
   .btn:hover {
     background-color: #788BFF;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+    animation: appear 2s ease ;
+  }
+
+  @keyframes appear {
+    0%{
+      opacity: 0;
+    }
+    50%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
   }
