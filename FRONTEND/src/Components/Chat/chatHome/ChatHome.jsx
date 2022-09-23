@@ -7,9 +7,9 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
   const joinRoom = () => {
     if (room !== "" && username !== "") {
       socket.emit("join_room", { username, room });
+      navigate('/chatapp', { replace: true });
     }
 
-    navigate('/chatapp', { replace: true });
   };
 
   return (
@@ -26,16 +26,14 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
           className={styles.input}
           onChange={(e) => setRoom(e.target.value)}
         >
-          <option>-- Select Room --</option>
-          <option value="javascript">JavaScript</option>
-          <option value="node">Node</option>
-          <option value="express">Express</option>
-          <option value="react">React</option>
+          <option>Select Room</option>
+          <option value="latvia">Latvia</option>
+          <option value="lithuania">Lithuania</option>
+          <option value="estonia">Estonia</option>
         </select>
 
         <button
-          className="btn btn-secondary"
-          style={{ width: "100%" }}
+          className={styles.btn}
           onClick={joinRoom}
         >
           Join Room
