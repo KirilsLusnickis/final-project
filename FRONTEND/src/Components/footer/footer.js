@@ -10,8 +10,6 @@ function Footer() {
           <div class="footer-link-items">
             <h2>About Us</h2>
             <Link to="/sign-up">How it works</Link>
-            <Link to="/">Testimonials</Link>
-            <Link to="/">Careers</Link>
             <Link to="/">Investors</Link>
             <Link to="/">Terms of Service</Link>
           </div>
@@ -19,7 +17,6 @@ function Footer() {
             <h2>Contact Us</h2>
             <Link to="/">Contact</Link>
             <Link to="/">Support</Link>
-            <Link to="/">Destinations</Link>
             <Link to="/">Sponsorships</Link>
           </div>
         </div>
@@ -27,7 +24,6 @@ function Footer() {
           <div class="footer-link-items">
             <h2>Videos</h2>
             <Link to="/">Submit Video</Link>
-            <Link to="/">Ambassadors</Link>
             <Link to="/">Agency</Link>
             <Link to="/">Influencer</Link>
           </div>
@@ -44,11 +40,11 @@ function Footer() {
         <div class="social-media-wrap">
           <div class="footer-logo">
             <Link to="/" className="social-logo">
-              TRVL
-              <i class="fab fa-typo3" />
+              WEATHER
+              <i class="fa-solid fa-cloud" />
             </Link>
           </div>
-          <small class="website-rights">TRVL © 2020</small>
+          <small class="website-rights">WEATHER © 2020</small>
           <div class="social-icons">
             <Link
               class="social-icon-link facebook"

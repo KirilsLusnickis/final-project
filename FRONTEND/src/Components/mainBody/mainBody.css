@@ -1,4 +1,12 @@
 .mainBody {
+    background-image: url(../../../public/images/mainBody-image.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -8,21 +16,35 @@
     position: relative;
 }
 
+
+
 img {
     max-width: 100%;
     height: auto;  
   }
 
 .mainBodyWrapper {
-    position: relative;
-    text-align: center;
-    color: white;
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+  height: 100%;
 }
 
 .mainBodyContainer {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.6vw;
+    max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  opacity: 0.8;
+  cursor: default ;
+  font-size: 1.6vw;
 } 
+
+.mainBodyText {
+    display: flex;
+}
