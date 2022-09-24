@@ -1,5 +1,5 @@
 .navbar {
-    background: #5465FF;
+    background: #4D99E7;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -8,6 +8,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    font-family: 'Poppins', sans-serif;
   }
   
   .navbar-container {
@@ -96,7 +97,7 @@
     }
   
     .nav-menu.active {
-      background: #9BB1FF;
+      background: #4D99E7;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
