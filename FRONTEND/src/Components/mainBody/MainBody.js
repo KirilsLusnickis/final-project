@@ -6,7 +6,6 @@ const MainBody = () => {
   return (
     <div className="mainBody">
       <div className="mainBodyWrapper">
-        {/* <img src="/images/mainBody-image.jpg" className="background"></img> */}
         <div className="mainBodyContainer">
           <h1 className="mainBodyHeader">ABOUT US</h1>
           <p className="mainBodyText">
