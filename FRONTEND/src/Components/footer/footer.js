@@ -9,7 +9,7 @@ function Footer() {
         <div className="footer-link-wrapper">
           <div class="footer-link-items">
             <h2>About Us</h2>
-            <Link to="/sign-up">How it works</Link>
+            <Link to="/">How it works</Link>
             <Link to="/">Investors</Link>
             <Link to="/">Terms of Service</Link>
           </div>
@@ -46,27 +46,19 @@ function Footer() {
           </div>
           <small class="website-rights">WEATHER © 2022</small>
           <div class="social-icons">
-            <Link
-              class="social-icon-link facebook"
-              to="/"
-              aria-label="Facebook"
-            >
+            <Link class="social-icon-link facebook" to="/">
               <i class="fab fa-facebook-f" />
             </Link>
-            <Link
-              class="social-icon-link instagram"
-              to="/"
-              aria-label="Instagram"
-            >
+            <Link class="social-icon-link instagram" to="/">
               <i class="fab fa-instagram" />
             </Link>
-            <Link class="social-icon-link youtube" to="/" aria-label="Youtube">
+            <Link class="social-icon-link youtube" to="/">
               <i class="fab fa-youtube" />
             </Link>
-            <Link class="social-icon-link twitter" to="/" aria-label="Twitter">
+            <Link class="social-icon-link twitter" to="/">
               <i class="fab fa-twitter" />
             </Link>
-            <Link class="social-icon-link twitter" to="/" aria-label="LinkedIn">
+            <Link class="social-icon-link twitter" to="/">
               <i class="fab fa-linkedin" />
             </Link>
           </div>
