@@ -7,8 +7,9 @@ import ChatHome from "./Components/Chat/chatHome/ChatHome";
 import ChatApp from "./Components/Chat/chatApp/ChatApp";
 import TopBar from "./Components/topBar/TopBar";
 import AboutUsPage from "./Pages/aboutUsPage/AboutUsPage"
+import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 
-const socket = io.connect("http://localhost:4000");
+const socket = io.connect("https://whispering-headland-00234.herokuapp.com");
 
 function App() {
   const [username, setUsername] = useState("");
@@ -37,6 +38,7 @@ function App() {
           path="/chatapp"
           element={<><TopBar/><ChatApp username={username} room={room} socket={socket} /></>}
         />
+        <Route path="/register" element={<RegisterPage/>}/>
       </Routes>
   </Router> 
   );

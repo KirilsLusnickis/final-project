@@ -1,17 +1,19 @@
-import styles from './styles.module.css';
-import Messages from './Messages';
-import SendMessage from './SendMessage';
-import RoomAndUsers from './RoomAndUsers';
+import styles from "./styles.module.css";
+import Messages from "./Messages";
+import SendMessage from "./SendMessage";
+import RoomAndUsers from "./RoomAndUsers";
 
 const ChatApp = ({ username, room, socket }) => {
-    console.log(username);
+  console.log(username);
   return (
-    <div className={styles.chatContainer}>
-    <RoomAndUsers socket={socket} username={username} room={room} />
-      <div>
-        <Messages socket={socket} />
+    <div className={styles.mainContainer}>
+      <div className={styles.chatContainer}>
+        <RoomAndUsers socket={socket} username={username} room={room} />
+        <div>
+          <Messages socket={socket} />
 
-        <SendMessage socket={socket} username={username} room={room} />
+          <SendMessage socket={socket} username={username} room={room} />
+        </div>
       </div>
     </div>
   );

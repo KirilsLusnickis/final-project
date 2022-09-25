@@ -3,8 +3,15 @@ import axios from "axios";
 import "./register.css";
 import Result from "./helpingComponents/Fail";
 
-
-const Register = ({heading, firstelem, secondelem, thirdelem, fourthelem, btnContent, successContent }) => {
+const Register = ({
+  heading,
+  firstelem,
+  secondelem,
+  thirdelem,
+  fourthelem,
+  btnContent,
+  successContent,
+}) => {
   const [registerData, setRegisterData] = useState({
     userName: "",
     email: "",
@@ -18,14 +25,12 @@ const Register = ({heading, firstelem, secondelem, thirdelem, fourthelem, btnCon
 
   const handleRegisterInput = (e) => {
     setRegisterData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    console.log(registerData);
   };
 
   const handleRegisterSubmit = async () => {
     try {
-    await axios.post(
-        "http://localhost:3001/api/register",
-        registerData
-      );
+      await axios.post("http://localhost:3001/api/register", registerData);
     } catch (error) {
       console.log(error);
       setErrorStatus(error.response.status);
@@ -33,55 +38,92 @@ const Register = ({heading, firstelem, secondelem, thirdelem, fourthelem, btnCon
   };
 
   const changeView = (value1, value2) => {
-    setDisplay(value1)
+    setDisplay(value1);
     setTimeout(() => {
       setDisplay(value2);
     }, 1000);
-  }
-  
-
+  };
 
   return (
     <>
-    <div className="registerWrapper">
-      <h1>{heading}</h1>
-      {display===0 && ( <div className="formWrapper">
-        <div className="formPart">
-          <div className="formItem">
-            <label>{firstelem}</label>
-            <input onChange={handleRegisterInput} name="userName" type="text" placeholder="Required"/>
+      <div className="registerWrapper">
+        <h1>{heading}</h1>
+        {display === 0 && (
+          <div className="formWrapper">
+            <div className="formPart">
+              <div className="formItem">
+                <label>{firstelem}</label>
+                <input
+                  onChange={handleRegisterInput}
+                  name="userName"
+                  type="text"
+                  placeholder="Required"
+                />
+              </div>
+              <div className="formItem">
+                <label>{secondelem}</label>
+                <input
+                  onChange={handleRegisterInput}
+                  name="email"
+                  type="email"
+                  placeholder="Required"
+                />
+              </div>
+            </div>
+            <div className="formPart">
+              <div className="formItem">
+                <label>{thirdelem}</label>
+                <input
+                  onChange={handleRegisterInput}
+                  name="city"
+                  type="text"
+                  placeholder="Optional"
+                />
+              </div>
+              <div className="formItem">
+                <label>{fourthelem}</label>
+                <input
+                  onChange={handleRegisterInput}
+                  name="password"
+                  type="password"
+                  placeholder="Required"
+                />
+              </div>
+            </div>
+            <div className="submitBtn">
+              <button
+                onClick={() => {
+                  handleRegisterSubmit();
+                  changeView(1, 2);
+                }}
+              >
+                {btnContent}
+              </button>
+            </div>
           </div>
-          <div className="formItem">
-            <label>{secondelem}</label>
-            <input onChange={handleRegisterInput} name="email" type="email" placeholder="Required" />
+        )}
+        {display === 1 && (
+          <div className="loader">
+            <img src={require("./loader.png")} alt="loader" />
           </div>
-        </div>
-        <div className="formPart">
-          <div className="formItem">
-            <label>{thirdelem}</label>
-            <input onChange={handleRegisterInput} name="city" type="text" placeholder="Optional" />
-          </div>
-          <div className="formItem">
-            <label>{fourthelem}</label>
-            <input
-              onChange={handleRegisterInput}
-              name="password"
-              type="password"
-              placeholder="Required"
-            />
-          </div>
-        </div>
-        <div className="submitBtn">
-          <button onClick={() => {handleRegisterSubmit(); changeView(1,2) }}>{btnContent}</button>
-        </div>
-      </div>)}
-      {display===1 &&  <div className="loader"><img src={require('./loader.png')} alt="loader" /></div>}
-      {(display===2 && errorStatus!==405) && <Result resultContent={"REGISTERED SUCCESSFULLY"}/>}
-      {(display===2 && errorStatus===405) && <Result resultContent={"REGISTRATION FAIL"}/> }
-    </div>
+        )}
+        {display === 2 && errorStatus !== 405 && (
+          <Result
+            resultContent={"REGISTERED SUCCESSFULLY"}
+            btnContent={"LOG IN"}
+            navUrl="/chat"
+          />
+        )}
+        {display === 2 && errorStatus === 405 && (
+          <Result
+            resultContent={"REGISTRATION FAIL"}
+            btnContent={"TRY AGAIN"}
+            navUrl="/register"
+          />
+        )}
+      </div>
     </>
   );
 };
 
 export default Register;
-

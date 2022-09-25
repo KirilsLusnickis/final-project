@@ -28,7 +28,7 @@ const RoomAndUsers = ({ socket, username, room }) => {
       <h2 className={styles.roomTitle}>{room}</h2>
 
       <div>
-        {roomUsers.length > 0 && <h5 className={styles.usersTitle}>Users:</h5>}
+        {roomUsers.length > 0 && <h5 className={styles.usersTitle}>Here:</h5>}
         <ul className={styles.usersList}>
           {roomUsers.map((user) => (
             <li
@@ -43,7 +43,7 @@ const RoomAndUsers = ({ socket, username, room }) => {
         </ul>
       </div>
 
-      <button className='btn btn-outline' onClick={leaveRoom}>
+      <button className={styles.btn} onClick={leaveRoom}>
         Leave
       </button>
     </div>

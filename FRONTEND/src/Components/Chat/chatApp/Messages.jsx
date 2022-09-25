@@ -17,12 +17,9 @@ const Messages = ({ socket }) => {
         },
       ]);
     });
-
-	// Remove event listener on component unmount
     return () => socket.off('receive_message');
   }, [socket]);
 
-  // dd/mm/yyyy, hh:mm:ss
   function formatDateFromTimestamp(timestamp) {
     const date = new Date(timestamp);
     return date.toLocaleString();
