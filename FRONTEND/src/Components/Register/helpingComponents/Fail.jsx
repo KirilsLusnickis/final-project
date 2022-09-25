@@ -14,7 +14,7 @@ const Result = ({resultContent, btnContent, navUrl}) => {
       <h2>{resultContent}</h2>
       <div className="submitBtn">
       <Link to={navUrl}>
-          <button onClick={() => {if(navUrl==="/register")refresh(); if(navUrl==="/signup")navigate('/sign-up', { replace: true })}}>{btnContent}</button>
+          <button className="btnRegister" onClick={() => {if(navUrl==="/register")refresh(); if(navUrl==="/sign-up") {navigate('/sign-up', { replace: true }); refresh()}}}>{btnContent}</button>
       </Link>
         </div>
     </div>

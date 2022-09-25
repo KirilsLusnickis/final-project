@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./login.css";
 import { Link } from "react-router-dom";
-import LoginResult from "../Register/helpingComponents/Fail";
+import LoginResult from "../Register/helpingComponents/LoginResult";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -28,18 +28,31 @@ const Login = () => {
       document.cookie = `session_token=${data}`;
       localStorage.clear();
       const word = loginData.userName;
-      const capitalized =  word.charAt(0).toUpperCase() + word.slice(1)
-      localStorage.setItem('userName', capitalized)
+      localStorage.setItem('userName', word);
     } catch (error) {
       console.error(error);
       setErrorStatus(error.response.status);
       console.log(errorStatus);
     }
   };
+
+  const changeView = (value1, value2) => {
+    setDisplay(value1);
+    setTimeout(() => {
+      setDisplay(value2);
+    }, 1000);
+  };
+
   return (
     <>
       <div className="loginWrapper">
+      <div className="loginContentWrapper">
         <h1>LOGIN</h1>
+        <Link to = "/">
+          <span className="icon">
+            <i className="fa-solid fa-house"></i>
+          </span>
+          </Link>
         {display === 0 && (
           <div className="formLoginWrapper">
             <div className="formLoginItem">
@@ -65,16 +78,21 @@ const Login = () => {
                 className="btn"
                 onClick={() => {
                   handleSubmit();
-                  setDisplay(1);
+                  changeView(1,2);
                 }}
               >
-                SUBMIT
+                LOGIN
               </button>
             </div>
-            <div className="question">Don't have an account? <Link to="/register"> <button className="btnLog">Register</button></Link></div>
+            <div className="question">Don't have an account? <Link to="/register"> <button className="btn btnLog">Register</button></Link></div>
           </div>
         )}
-        {display === 1 && errorStatus !== 404 && (
+        {display === 1 && (
+            <div className="loader">
+              <img src={require("../Register/loader.png")} alt="loader" />
+            </div>
+          )}
+        {display === 2 && errorStatus !== 404 && (
           <div>
             <LoginResult
               resultContent={"SUCCESS"}
@@ -83,7 +101,7 @@ const Login = () => {
             />
           </div>
         )}
-        {display === 1 && errorStatus === 404 && (
+        {display === 2 && errorStatus === 404 && (
           <div>
             <LoginResult
               resultContent={"SIGN-UP FAILED"}
@@ -92,6 +110,7 @@ const Login = () => {
             />
           </div>
         )}
+        </div>
       </div>
     </>
   );
