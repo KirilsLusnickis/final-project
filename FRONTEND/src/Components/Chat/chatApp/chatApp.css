@@ -10,7 +10,6 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     gap: 0.5rem;
-    /* background-color: bisque; */
   }
   
   /* Room and users component */
@@ -18,7 +17,6 @@
     border: none;
     border-radius: 2rem;
     background-color: #f8f8ff;
-    /* height: 889px; */
     height: 80vh;
     text-align: center;
     margin-top: 0.5rem;
@@ -63,7 +61,6 @@
   }
   .message {
     background-color: #4d98e7;
-    /* border: 0.15rem solid #222121; */
     box-shadow: 0 2px 8px 0 #788bff;
     border-radius: 1rem;
     margin-bottom: 24px;

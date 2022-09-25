@@ -3,16 +3,16 @@ import Messages from "./Messages";
 import SendMessage from "./SendMessage";
 import RoomAndUsers from "./RoomAndUsers";
 
-const ChatApp = ({ username, room, socket }) => {
+const ChatApp = ({ username, room, socket, chatname }) => {
   console.log(username);
   return (
     <div className="mainContainer">
       <div className="chatContainer">
-        <RoomAndUsers socket={socket} username={username} room={room} />
+        <RoomAndUsers socket={socket} username={username} room={room} chatname={chatname}/>
         <div>
           <Messages socket={socket} />
 
-          <SendMessage socket={socket} username={username} room={room} />
+          <SendMessage socket={socket} username={username} room={room} chatname={chatname} />
         </div>
       </div>
     </div>

@@ -1,28 +1,19 @@
-.logContainer {
-  overflow: hidden;
-}
+
 
 .main {
-  background-color: #e2fdff;
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   position: fixed;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-image: url(../../../public/images/mainBody-image.jpg);
+  background-size: 1920px 1080px;
 }
 
-.register {
+.login {
   display: flex;
   justify-content: center;
 }
 
-#backgroundVideo {
-  position: fixed;
-  right: 0;
-  top: 0;
-  min-width: 100%;
-  min-height: 100%;
-}

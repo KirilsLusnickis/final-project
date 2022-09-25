@@ -48,13 +48,19 @@ const Register = ({
   return (
     <>
       <div className="registerWrapper">
-        <h1>{heading}</h1>
-        {display === 0 && (
-          <div className="formWrapper">
-            <div className="formPart">
+        <div className="registerContentWrapper">
+          <h1>{heading}</h1>
+          <Link to = "/">
+          <span className="icon">
+            <i className="fa-solid fa-house"></i>
+          </span>
+          </Link>
+          {display === 0 && (
+            <div className="formWrapper">
               <div className="formItem">
                 <label>{firstelem}</label>
-                <input className="registerInput"
+                <input
+                  className="registerInput"
                   onChange={handleRegisterInput}
                   name="userName"
                   type="text"
@@ -63,18 +69,18 @@ const Register = ({
               </div>
               <div className="formItem">
                 <label>{secondelem}</label>
-                <input className="registerInput"
+                <input
+                  className="registerInput"
                   onChange={handleRegisterInput}
                   name="email"
                   type="email"
                   placeholder="Required"
                 />
               </div>
-            </div>
-            <div className="formPart">
               <div className="formItem">
                 <label>{thirdelem}</label>
-                <input className="registerInput"
+                <input
+                  className="registerInput"
                   onChange={handleRegisterInput}
                   name="city"
                   type="text"
@@ -83,46 +89,51 @@ const Register = ({
               </div>
               <div className="formItem">
                 <label>{fourthelem}</label>
-                <input className="registerInput"
+                <input
+                  className="registerInput"
                   onChange={handleRegisterInput}
                   name="password"
                   type="password"
                   placeholder="Required"
                 />
               </div>
+              <div className="submitBtn">
+                <button
+                  className="btnRegister"
+                  onClick={() => {
+                    handleRegisterSubmit();
+                    changeView(1, 2);
+                  }}
+                >
+                  {btnContent}
+                </button>
+              </div>
+              <p className="questionReg">Already have an accout?</p>
+              <Link to="/sign-up">
+                <button className="btnRegister btnReg">SIGN-UP</button>
+              </Link>
             </div>
-            <div className="submitBtn">
-              <button
-                onClick={() => {
-                  handleRegisterSubmit();
-                  changeView(1, 2);
-                }}
-              >
-                {btnContent}
-              </button>
+          )}
+          {display === 1 && (
+            <div className="loader">
+              <img src={require("./loader.png")} alt="loader" />
             </div>
-          </div>
-        )}
-        {display === 1 && (
-          <div className="loader">
-            <img src={require("./loader.png")} alt="loader" />
-          </div>
-        )}
-        {display === 2 && errorStatus !== 405 && (
-          <Result
-            resultContent={"REGISTERED SUCCESSFULLY"}
-            btnContent={"LOG IN"}
-            navUrl="/sign-up"
-          />
-        )}
-        {display === 2 && errorStatus === 405 && (
-          <Result
-            resultContent={"REGISTRATION FAIL"}
-            btnContent={"TRY AGAIN"}
-            navUrl="/register"
-          />
-        )}
-        <div className="questionReg">Already have an accout? <Link to="/sign-up"> <button className="btnReg">SIGN-UP</button></Link></div>
+          )}
+          {display === 2 && errorStatus !== 405 && (
+            <Result
+              resultContent={"REGISTERED SUCCESSFULLY"}
+              btnContent={"LOG IN"}
+              navUrl="/sign-up"
+            />
+          )}
+          {display === 2 && errorStatus === 405 && (
+            <Result
+              resultContent={"REGISTRATION FAIL"}
+              btnContent={"TRY AGAIN"}
+              navUrl="/register"
+            />
+          )}
+        </div>
       </div>
     </>
   );

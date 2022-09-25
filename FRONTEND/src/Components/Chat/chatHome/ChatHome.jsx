@@ -1,12 +1,12 @@
 import "./chatHome.css";
 import { useNavigate } from "react-router-dom";
 
-const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
+const ChatHome = ({ username, setUsername, room, setRoom, socket, chatname }) => {
   const navigate = useNavigate();
 
   const joinRoom = () => {
-    if (room !== "" && username !== "") {
-      socket.emit("join_room", { username, room });
+    if (room !== "") {
+      socket.emit("join_room", { chatname, room });
       navigate('/chatapp', { replace: true });
     }
 
@@ -17,11 +17,6 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
       <div className="formContainer">
       <div className="content">
         <h1>{`CHAT`}</h1>
-        <input
-          className="input"
-          placeholder="Username..."
-          onChange={(e) => setUsername(e.target.value)}
-        />
 
         <select
           className="input"

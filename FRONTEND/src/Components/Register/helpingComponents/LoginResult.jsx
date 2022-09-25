@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LoginResult = ({resultContent, btnContent, navUrl}) => {
 
-    const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const refresh = () => {
     window.location.reload(false)
   }
@@ -14,7 +13,7 @@ const LoginResult = ({resultContent, btnContent, navUrl}) => {
       <h2>{resultContent}</h2>
       <div className="submitBtn">
       <Link to={navUrl}>
-          <button onClick={() => {if(navUrl==="/sign-up")refresh()}}>{btnContent}</button>
+          <button className="btnRegister" onClick={() => {if(navUrl==="/sign-up")refresh(); console.log('1')}}>{btnContent}</button>
       </Link>
         </div>
     </div>
