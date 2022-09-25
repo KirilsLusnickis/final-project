@@ -1,9 +1,9 @@
 import "../register.css";
 import { Link, useNavigate } from "react-router-dom";
 
-const Result = ({resultContent, btnContent, navUrl}) => {
+const LoginResult = ({resultContent, btnContent, navUrl}) => {
 
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   const refresh = () => {
     window.location.reload(false)
@@ -14,11 +14,11 @@ const Result = ({resultContent, btnContent, navUrl}) => {
       <h2>{resultContent}</h2>
       <div className="submitBtn">
       <Link to={navUrl}>
-          <button onClick={() => {if(navUrl==="/register")refresh(); if(navUrl==="/signup")navigate('/sign-up', { replace: true })}}>{btnContent}</button>
+          <button onClick={() => {if(navUrl==="/sign-up")refresh()}}>{btnContent}</button>
       </Link>
         </div>
     </div>
   );
 };
 
-export default Result;
+export default LoginResult;

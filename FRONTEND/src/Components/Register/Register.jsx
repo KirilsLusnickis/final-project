@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import "./register.css";
 import Result from "./helpingComponents/Fail";
+import { Link } from "react-router-dom";
 
 const Register = ({
   heading,
@@ -111,7 +112,7 @@ const Register = ({
           <Result
             resultContent={"REGISTERED SUCCESSFULLY"}
             btnContent={"LOG IN"}
-            navUrl="/chat"
+            navUrl="/sign-up"
           />
         )}
         {display === 2 && errorStatus === 405 && (
@@ -121,6 +122,7 @@ const Register = ({
             navUrl="/register"
           />
         )}
+        <div className="questionReg">Already have an accout? <Link to="/sign-up"> <button className="btnReg">SIGN-UP</button></Link></div>
       </div>
     </>
   );
