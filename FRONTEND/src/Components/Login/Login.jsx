@@ -6,7 +6,7 @@ import LoginResult from "../Register/helpingComponents/Fail";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
-    email: "",
+    userName: "",
     password: "",
   });
 
@@ -27,7 +27,7 @@ const Login = () => {
       );
       document.cookie = `session_token=${data}`;
       localStorage.clear();
-      const word = loginData.email.split('@')[0];
+      const word = loginData.userName;
       const capitalized =  word.charAt(0).toUpperCase() + word.slice(1)
       localStorage.setItem('userName', capitalized)
     } catch (error) {
@@ -43,11 +43,11 @@ const Login = () => {
         {display === 0 && (
           <div className="formLoginWrapper">
             <div className="formLoginItem">
-              <label>email</label>
+              <label>username</label>
               <input className="logininput"
                 onChange={handleLoginInput}
-                name="email"
-                type="email"
+                name="userName"
+                type="text"
                 placeholder="Required"
               />
             </div>

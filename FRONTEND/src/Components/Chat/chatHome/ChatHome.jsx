@@ -17,11 +17,6 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket, chatname }) =>
       <div className="formContainer">
       <div className="content">
         <h1>{`CHAT`}</h1>
-        <input
-          className="input"
-          placeholder="Username..."
-          onChange={(e) => setUsername(e.target.value)}
-        />
 
         <select
           className="input"

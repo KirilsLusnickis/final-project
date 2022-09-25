@@ -21,7 +21,7 @@ export const createUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
   try {
-    const user = await userModel.findOne({ email: req.body.email });
+    const user = await userModel.findOne({ userName: req.body.userName });
 
     if (!user) {
       return res.status(404).send("Wrong user or password.");
