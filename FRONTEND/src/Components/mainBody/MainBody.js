@@ -9,8 +9,8 @@ const MainBody = () => {
         <div className="mainBodyContainer">
           <h1 className="mainBodyHeader">WEATHER</h1>
           <p className="mainBodyText">
-            The best application where everything is selected especially for you
-            and your friends
+            Probably the best application where everything is selected
+            especially for you and your friends
           </p>
         </div>
       </div>
