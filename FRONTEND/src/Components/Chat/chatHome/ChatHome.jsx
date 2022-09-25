@@ -5,8 +5,7 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket, chatname }) =>
   const navigate = useNavigate();
 
   const joinRoom = () => {
-    if (room !== "" && username !== "") {
-      const chatname = localStorage.getItem('userName');
+    if (room !== "") {
       socket.emit("join_room", { chatname, room });
       navigate('/chatapp', { replace: true });
     }

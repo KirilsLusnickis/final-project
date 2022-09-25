@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 const Messages = ({ socket }) => {
   const [messagesRecieved, setMessagesReceived] = useState([]);
 
-  // Runs whenever a socket event is recieved from the server
   useEffect(() => {
     socket.on('receive_message', (data) => {
       console.log(data);
@@ -12,7 +11,7 @@ const Messages = ({ socket }) => {
         ...state,
         {
           message: data.message,
-          username: data.username,
+          chatname: data.chatname,
           __createdtime__: data.__createdtime__,
         },
       ]);
@@ -30,7 +29,7 @@ const Messages = ({ socket }) => {
       {messagesRecieved.map((msg, i) => (
         <div className="message" key={i}>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <span className="msgMeta">{msg.username}</span>
+            <span className="msgMeta">{msg.chatname}</span>
             <span className="msgMeta">
               {formatDateFromTimestamp(msg.__createdtime__)}
             </span>
