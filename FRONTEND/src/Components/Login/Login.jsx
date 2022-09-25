@@ -40,7 +40,7 @@ const Login = () => {
           <div className="formLoginWrapper">
             <div className="formLoginItem">
               <label>email</label>
-              <input
+              <input className="logininput"
                 onChange={handleLoginInput}
                 name="email"
                 type="email"
@@ -49,7 +49,7 @@ const Login = () => {
             </div>
             <div className="formLoginItem">
               <label>password</label>
-              <input
+              <input className="logininput"
                 onChange={handleLoginInput}
                 name="password"
                 type="password"

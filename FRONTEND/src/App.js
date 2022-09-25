@@ -9,6 +9,7 @@ import TopBar from "./Components/topBar/TopBar";
 import AboutUsPage from "./Pages/aboutUsPage/AboutUsPage";
 import RegisterPage from "./Pages/RegisterPage/RegisterPage";
 import LoginPage from "./Pages/loginPage/LoginPage"
+import WeatherPage from "./Pages/WeatherPage/WeatherPage"
 
 const socket = io.connect("https://whispering-headland-00234.herokuapp.com");
 
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<AboutUsPage />} />
+        <Route path="/weather" element={<WeatherPage />} />
         <Route
           path="/chat"
           element={

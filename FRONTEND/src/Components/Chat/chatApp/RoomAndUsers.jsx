@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import "./chatApp.css";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,12 +24,12 @@ const RoomAndUsers = ({ socket, username, room }) => {
   };
 
   return (
-    <div className={styles.roomAndUsersColumn}>
-      <h2 className={styles.roomTitle}>{room}</h2>
+    <div className="roomAndUsersColumn">
+      <h2 className="roomTitle">{room}</h2>
 
       <div>
-        {roomUsers.length > 0 && <h5 className={styles.usersTitle}>Here:</h5>}
-        <ul className={styles.usersList}>
+        {roomUsers.length > 0 && <h5 className="usersTitle">Here:</h5>}
+        <ul className="usersList">
           {roomUsers.map((user) => (
             <li
               style={{
@@ -43,7 +43,7 @@ const RoomAndUsers = ({ socket, username, room }) => {
         </ul>
       </div>
 
-      <button className={styles.btn} onClick={leaveRoom}>
+      <button className="btn" onClick={leaveRoom}>
         Leave
       </button>
     </div>

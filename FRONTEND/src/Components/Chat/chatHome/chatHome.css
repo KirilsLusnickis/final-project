@@ -1,12 +1,8 @@
-*{
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-}
 
 .container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("https://img.freepik.com/free-photo/blue-sky-watercolor-cloud-background_1409-1454.jpg?w=1380&t=st=1663969863~exp=1663970463~hmac=33612e8bf8961468fe6854b33dfc6de94ba7da921ecb920f31e328b2475bea3a");

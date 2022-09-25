@@ -32,7 +32,7 @@
     margin: 0.5rem;
 }
 
-input {
+.registerInput {
     border-radius: 1rem;
     height: 5vh;
     font-size: 1.2rem;

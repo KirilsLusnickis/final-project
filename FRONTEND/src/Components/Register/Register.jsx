@@ -54,7 +54,7 @@ const Register = ({
             <div className="formPart">
               <div className="formItem">
                 <label>{firstelem}</label>
-                <input
+                <input className="registerInput"
                   onChange={handleRegisterInput}
                   name="userName"
                   type="text"
@@ -63,7 +63,7 @@ const Register = ({
               </div>
               <div className="formItem">
                 <label>{secondelem}</label>
-                <input
+                <input className="registerInput"
                   onChange={handleRegisterInput}
                   name="email"
                   type="email"
@@ -74,7 +74,7 @@ const Register = ({
             <div className="formPart">
               <div className="formItem">
                 <label>{thirdelem}</label>
-                <input
+                <input className="registerInput"
                   onChange={handleRegisterInput}
                   name="city"
                   type="text"
@@ -83,7 +83,7 @@ const Register = ({
               </div>
               <div className="formItem">
                 <label>{fourthelem}</label>
-                <input
+                <input className="registerInput"
                   onChange={handleRegisterInput}
                   name="password"
                   type="password"

@@ -1,4 +1,4 @@
-import styles from './styles.module.css';
+import "./chatApp.css";
 import React, { useState } from 'react';
 
 const SendMessage = ({ socket, username, room }) => {
@@ -14,14 +14,14 @@ const SendMessage = ({ socket, username, room }) => {
   };
 
   return (
-    <div className={styles.sendMessageContainer}>
+    <div className="sendMessageContainer">
       <input
-        className={styles.messageInput}
+        className="messageInput"
         placeholder='Message...'
         onChange={(e) => setMessage(e.target.value)}
         value={message}
       />
-      <button className={styles.btn} onClick={sendMessage}>
+      <button className="btn" onClick={sendMessage}>
       Send
       </button>
     </div>

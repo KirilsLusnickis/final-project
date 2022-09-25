@@ -6,8 +6,7 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+body, html {
   background-image: radial-gradient(
     circle 993px at 0.5% 50.5%,
     #bfd7ff 0%,

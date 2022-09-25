@@ -1,4 +1,4 @@
-import styles from "./styles.module.css";
+import "./chatHome.css";
 import { useNavigate } from "react-router-dom";
 
 const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
@@ -13,18 +13,18 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
-      <div className={styles.content}>
+    <div className="container">
+      <div className="formContainer">
+      <div className="content">
         <h1>{`CHAT`}</h1>
         <input
-          className={styles.input}
+          className="input"
           placeholder="Username..."
           onChange={(e) => setUsername(e.target.value)}
         />
 
         <select
-          className={styles.input}
+          className="input"
           onChange={(e) => setRoom(e.target.value)}
         >
           <option>Select Room</option>
@@ -34,7 +34,7 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
         </select>
 
         <button
-          className={styles.btn}
+          className="btn"
           onClick={joinRoom}
         >
           Join Room
