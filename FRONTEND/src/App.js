@@ -1,12 +1,15 @@
-import './App.css';
-import WeatherPage from './Pages/WeatherPage/WeatherPage';
+import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutUsPage from "./Pages/aboutUsPage/AboutUsPage";
 
 function App() {
   return (
-    <div className="App">
-      <WeatherPage/>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AboutUsPage />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;
