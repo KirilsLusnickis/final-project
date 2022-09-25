@@ -22,7 +22,24 @@
     margin-top: 0.5rem;
     box-shadow: -20px 0px 50px 0px #788bff;
     z-index: 1;
+    animation: usersAppear 2s;
   }
+
+  @keyframes usersAppear {
+    0% {
+      opacity: 0;
+      height: 0vh;
+    }
+    50% {
+      opacity: 0;
+      height: 0vh;
+    }
+    100% {
+      opacity: 1;
+      height: 80vh;
+    }
+  }
+
   .roomTitle {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -58,7 +75,18 @@
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
     box-shadow: 20px 0px 50px 0 #788bff;
+    animation: messagesAppear 2s;
   }
+
+  @keyframes messagesAppear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .message {
     background-color: #4d98e7;
     box-shadow: 0 2px 8px 0 #788bff;
@@ -94,12 +122,30 @@
     border: 0.2rem solid white;
     border-radius: 2rem;
     height: 9.5vh;
+    width: 45.5vw;
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0 8px 10px 0 #788bff;
+    animation: msgInputAppear 2s;
   }
+
+  @keyframes msgInputAppear {
+    0%{
+      width: 0vw;
+      opacity: 0;
+    }
+    50%{
+      width: 0vw;
+      opacity: 0;
+    }
+    100%{
+      width: 45.5vw;
+      opacity: 1;
+    }
+  }
+
   .messageInput {
     padding: 14px;
     margin-right: 16px;
