@@ -124,9 +124,12 @@ function WeatherPage() {
     </>
   )
   : (
+    <>
+    <TopBar/>
     <div className="errScr">
       <h1>🐈Loading🐈</h1>
     </div>
+    </>
   );
 }
 

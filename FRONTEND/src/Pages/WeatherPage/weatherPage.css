@@ -22,6 +22,8 @@
   align-items: center;
 }
 
+
+
 @media only screen and (max-width: 950px) {
   html,
   body {
@@ -155,6 +157,9 @@
   padding: 20px;
   margin: 0 auto;
   font-size: 25px;
+  background-image: url(../../../public/images/mainBody-image.jpg);
+  background-size: 1920px 1080px;
+  color: #f8f8ff;
 }
 
 
