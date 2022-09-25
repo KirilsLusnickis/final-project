@@ -38,6 +38,7 @@ function WeatherPage() {
     "Sunday",
   ];
 
+
   return weatherData && !weatherData.message ? (
     <>
     <TopBar/>
@@ -121,7 +122,8 @@ function WeatherPage() {
       </div>
     </div>
     </>
-  ) : (
+  )
+  : (
     <div className="errScr">
       <h1>🐈Loading🐈</h1>
     </div>

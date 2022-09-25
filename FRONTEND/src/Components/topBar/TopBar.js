@@ -8,6 +8,25 @@ const TopBar = () => {
   const manualClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  const deleteAllCookies = () => {
+    const cookies = document.cookie.split(";");
+  
+    for (const cookie of cookies) {
+      const eqPos = cookie.indexOf("=");
+      const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+      document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    }
+  }
+
+  const refresh = () => {
+    window.location.reload(false)
+  }
+
+
+  const isAuth = localStorage.getItem('authorized');
+  
+
+
   return (
     <>
       <nav className="navbar">
@@ -38,15 +57,28 @@ const TopBar = () => {
                 Chat
               </Link>
             </li>
+            {!isAuth &&
             <li className="nav-item sign">
               <Link
                 to="/sign-up"
                 className="nav-links"
                 onClick={closeMobileMenu}
               >
-                Sign-up
+              Sign Up
+                {/* {isAuth? <span>Log Out</span> : <span>Sign Up</span> } */}
               </Link>
-            </li>
+            </li>}
+            {isAuth &&
+            <li className="nav-item sign">
+              <Link
+                to="/"
+                className="nav-links"
+                onClick={() => {closeMobileMenu(); deleteAllCookies(); localStorage.clear(); refresh()}}
+              >
+              Log Out
+                {/* {isAuth? <span>Log Out</span> : <span>Sign Up</span> } */}
+              </Link>
+            </li>}
           </ul>
         </div>
       </nav>

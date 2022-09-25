@@ -8,9 +8,6 @@ body {
     display: none;
   }
 
-.aboutUsContainer {
-  animation: appearAbtUs 1s;
-}
 
 @keyframes appearAbtUs {
   0%{

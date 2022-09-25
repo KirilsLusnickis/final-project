@@ -149,13 +149,14 @@
 .errScr {
   text-align: center;
   height: 100vh;
-  max-width: 650px;
+  max-width: 100vw;
   display: grid;
   place-items: center;
   padding: 20px;
   margin: 0 auto;
   font-size: 25px;
 }
+
 
 .errSearchInput {
   max-width: 100%;

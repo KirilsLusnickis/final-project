@@ -13,7 +13,7 @@ const LoginResult = ({resultContent, btnContent, navUrl}) => {
       <h2>{resultContent}</h2>
       <div className="submitBtn">
       <Link to={navUrl}>
-          <button className="btnRegister" onClick={() => {if(navUrl==="/sign-up")refresh(); console.log('1')}}>{btnContent}</button>
+          <button className="btnRegister" onClick={() => {if(navUrl==="/sign-up")refresh(); else { navigate('/', { replace: true }); refresh();}}}>{btnContent}</button>
       </Link>
         </div>
     </div>

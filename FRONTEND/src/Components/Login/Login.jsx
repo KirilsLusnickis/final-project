@@ -29,6 +29,7 @@ const Login = () => {
       localStorage.clear();
       const word = loginData.userName;
       localStorage.setItem('userName', word);
+      localStorage.setItem('authorized', true);
     } catch (error) {
       console.error(error);
       setErrorStatus(error.response.status);
