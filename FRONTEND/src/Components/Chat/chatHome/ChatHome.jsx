@@ -34,10 +34,10 @@ const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
         </select>
 
         <button
-          className="btn"
+          className="btnJoin"
           onClick={joinRoom}
         >
-          Join Room
+          <span className="btnSpan">Join</span>
         </button>
       </div>
       </div>

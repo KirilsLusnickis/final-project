@@ -7,11 +7,13 @@
 }
 
 .bigWrapper {
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle 993px at 0.5% 50.5%,
     #bfd7ff 0%,
     #e2fdff 100.2%
-  );
+  ); */
+  background-image: url(../../../public/images/mainBody-image.jpg);
+  background-size: 1920px 1080px;
   font-family: "Poppins", sans-serif;
   height: 100vh;
   width: 100vw;

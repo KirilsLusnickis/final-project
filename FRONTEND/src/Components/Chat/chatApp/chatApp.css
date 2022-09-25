@@ -1,5 +1,5 @@
 .mainContainer {
-  background-image: url("https://img.freepik.com/free-photo/blue-sky-watercolor-cloud-background_1409-1454.jpg?w=1380&t=st=1663969863~exp=1663970463~hmac=33612e8bf8961468fe6854b33dfc6de94ba7da921ecb920f31e328b2475bea3a");
+  background-image: url(../../../../public/images/mainBody-image.jpg);
   background-size: 1920px 1080px;
 }
 
@@ -15,29 +15,32 @@
   
   /* Room and users component */
   .roomAndUsersColumn {
-    border: 0.2rem solid white;
+    border: none;
     border-radius: 2rem;
-    background-color: #4d99e7;
+    background-color: #f8f8ff;
     /* height: 889px; */
     height: 80vh;
     text-align: center;
     margin-top: 0.5rem;
+    box-shadow: -20px 0px 50px 0px #788bff;
+    z-index: 1;
   }
   .roomTitle {
-    margin-bottom: 60px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
     font-size: 2rem;
-    color: #fff;
+    color: #222121;
   }
   .usersTitle {
     font-size: 1.2rem;
-    color: #fff;
+    color: #222121;
   }
   .usersList {
     list-style-type: none;
     padding-left: 0;
-    margin-bottom: 60px;
-    color: #BFD7FF;
+    margin-bottom: 1rem;
+    color: #222121;
   }
   .usersList li {
     margin-bottom: 12px;
@@ -51,15 +54,17 @@
     height: 80vh;
     overflow: auto;
     padding: 10px 10px 10px 10px;
-    background-color: #4d99e7;
+    background-color: #f8f8ff;
     border: 0.2rem solid white;
     border-radius: 2rem;
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
+    box-shadow: 20px 0px 50px 0 #788bff;
   }
   .message {
-    background-color: #788BFF;
-    border: 0.2rem solid white;
+    background-color: #4d98e7;
+    /* border: 0.15rem solid #222121; */
+    box-shadow: 0 2px 8px 0 #788bff;
     border-radius: 1rem;
     margin-bottom: 24px;
     width: 40vw;
@@ -77,18 +82,18 @@
     }
   }
   .msgMeta {
-    color: #BFD7FF;
+    color: #f8f8ff;
     font-size: 0.9rem;
     font-weight: 800;
   }
   .msgText {
-    color: white;
+    color: #f8f8ff;
   }
   
   /* Message input and button */
   .sendMessageContainer {
-    padding: 20px 20px 20px px;
-    background-color: #4d99e7;
+    padding: 20px 20px 20px 20px;
+    background-color: #f8f8ff;
     border: 0.2rem solid white;
     border-radius: 2rem;
     height: 9.5vh;
@@ -96,30 +101,41 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 8px 10px 0 #788bff;
   }
   .messageInput {
     padding: 14px;
     margin-right: 16px;
     width: 60%;
     border-radius: 1rem;
-    border: 1px solid rgb(153, 217, 234);
+    border: 1px solid #222121;
     font-size: 0.9rem;
     align-self: center;
   }
 
-  .btn {
-    height: 50px;
+  .btnApp {
     width: 100px;
-    background-color: #9BB1FF;
+    height: 50px;
+    background-color: #4d98e7;
+    padding: 1rem;
+    border: none;
     border-radius: 1rem;
-    border: 0.2rem solid white;
-    color: white;
+    cursor: pointer;
     transition: 0.2s ease-in-out;
-    font-size: 1.2rem;
-    font-weight: 800;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f8f8ff;
   }
 
-  .btn:hover {
-    background-color: #788BFF;
+  .btnRoom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btnApp:hover {
+    background-color: #0778f0;
     cursor: pointer;
   }

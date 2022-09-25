@@ -1,25 +1,9 @@
 body {
   overflow-x: hidden;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;
 }
 
-body::-webkit-scrollbar {
-    width: 8px;           /* width of the entire scrollbar */
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: none;        /* color of the tracking area */
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #E2FDFF;    /* color of the scroll thumb */
-    border-radius: 20px;       /* roundness of the scroll thumb */
-    border: 1px solid #ddd8c4;  /* creates padding around scroll thumb */
-  }
-  
-  body::-webkit-scrollbar-track-piece:start {
-    background: transparent;
-  }
-  
-  body::-webkit-scrollbar-track-piece:end {
-    background: transparent;
+  body::-webkit-scrollbar {
+    display: none;
   }

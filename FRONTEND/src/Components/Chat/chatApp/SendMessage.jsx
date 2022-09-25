@@ -21,8 +21,8 @@ const SendMessage = ({ socket, username, room }) => {
         onChange={(e) => setMessage(e.target.value)}
         value={message}
       />
-      <button className="btn" onClick={sendMessage}>
-      Send
+      <button className="btnApp" onClick={sendMessage}>
+      SEND
       </button>
     </div>
   );

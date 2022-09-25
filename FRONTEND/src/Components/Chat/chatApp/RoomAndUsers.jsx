@@ -1,6 +1,6 @@
 import "./chatApp.css";
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RoomAndUsers = ({ socket, username, room }) => {
   const [roomUsers, setRoomUsers] = useState([]);
@@ -8,19 +8,19 @@ const RoomAndUsers = ({ socket, username, room }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    socket.on('chatroom_users', (data) => {
+    socket.on("chatroom_users", (data) => {
       console.log(data);
       setRoomUsers(data);
     });
 
-    return () => socket.off('chatroom_users');
+    return () => socket.off("chatroom_users");
   }, [socket]);
 
   const leaveRoom = () => {
     const __createdtime__ = Date.now();
-    socket.emit('leave_room', { username, room, __createdtime__ });
+    socket.emit("leave_room", { username, room, __createdtime__ });
     // Redirect to home page
-    navigate('/', { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (
@@ -33,7 +33,7 @@ const RoomAndUsers = ({ socket, username, room }) => {
           {roomUsers.map((user) => (
             <li
               style={{
-                fontWeight: `${user.username === username ? 'bold' : 'normal'}`,
+                fontWeight: `${user.username === username ? "bold" : "normal"}`,
               }}
               key={user.id}
             >
@@ -42,10 +42,11 @@ const RoomAndUsers = ({ socket, username, room }) => {
           ))}
         </ul>
       </div>
-
-      <button className="btn" onClick={leaveRoom}>
-        Leave
-      </button>
+      <div className="btnRoom">
+        <button className="btnApp" onClick={leaveRoom}>
+          LEAVE
+        </button>
+      </div>
     </div>
   );
 };
