@@ -26,6 +26,10 @@ const Login = () => {
         { withCredentials: true }
       );
       document.cookie = `session_token=${data}`;
+      localStorage.clear();
+      const word = loginData.email.split('@')[0];
+      const capitalized =  word.charAt(0).toUpperCase() + word.slice(1)
+      localStorage.setItem('userName', capitalized)
     } catch (error) {
       console.error(error);
       setErrorStatus(error.response.status);

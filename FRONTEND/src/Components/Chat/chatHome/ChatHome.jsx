@@ -1,12 +1,13 @@
 import "./chatHome.css";
 import { useNavigate } from "react-router-dom";
 
-const ChatHome = ({ username, setUsername, room, setRoom, socket }) => {
+const ChatHome = ({ username, setUsername, room, setRoom, socket, chatname }) => {
   const navigate = useNavigate();
 
   const joinRoom = () => {
     if (room !== "" && username !== "") {
-      socket.emit("join_room", { username, room });
+      const chatname = localStorage.getItem('userName');
+      socket.emit("join_room", { chatname, room });
       navigate('/chatapp', { replace: true });
     }
 

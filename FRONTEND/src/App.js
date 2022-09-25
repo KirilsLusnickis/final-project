@@ -33,6 +33,7 @@ function App() {
                 room={room}
                 setRoom={setRoom}
                 socket={socket}
+                chatname={localStorage.getItem('userName')}
               />
             </>
           }
@@ -42,7 +43,7 @@ function App() {
           element={
             <>
               <TopBar />
-              <ChatApp username={username} room={room} socket={socket} />
+              <ChatApp username={username} room={room} socket={socket} chatname={localStorage.getItem('userName')} />
             </>
           }
         />
