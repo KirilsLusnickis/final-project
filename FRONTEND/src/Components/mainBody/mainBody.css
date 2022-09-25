@@ -48,15 +48,26 @@ img {
 .mainBodyText {
     display: flex;
     font-size: 2vw;
+    animation: appearTxt 2.5s ease-in;
 }
 
 .mainBodyHeader {
-	-webkit-animation: mainBodyHeader 1.3s ease-in both;
-	animation: mainBodyHeader 1.3s ease-in both;
+	-webkit-animation: mainBodyHeader 1s ease-in both;
+	animation: mainBodyHeader 1s ease-in both;
   font-size: 4vw;
 }
 
-
+@keyframes appearTxt {
+  0%{
+    opacity: 0;
+  }
+  33%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 
  @-webkit-keyframes mainBodyHeader {
   0% {

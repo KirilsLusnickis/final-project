@@ -7,3 +7,16 @@ body {
   body::-webkit-scrollbar {
     display: none;
   }
+
+.aboutUsContainer {
+  animation: appearAbtUs 1s;
+}
+
+@keyframes appearAbtUs {
+  0%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}

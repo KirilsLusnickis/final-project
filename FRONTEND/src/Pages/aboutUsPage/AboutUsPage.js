@@ -6,9 +6,11 @@ import "./aboutUsPage.css";
 const AboutUsPage = () => {
   return (
     <>
+    <div className="aboutUsContainer">
       <TopBar />
       <MainBody />
       <Footer />
+      </div>
     </>
   );
 };
