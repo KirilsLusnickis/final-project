@@ -13,7 +13,7 @@
     height: 400px;
     margin: 0 auto 10vh auto;
     padding: 3rem;
-    background: #5465FF;
+    background: #4d99e7;
     border: 0.2rem solid white  ;
     border-radius: 3rem;
     display: flex;
@@ -52,7 +52,7 @@
 
   .btn {
     width: 100%;
-    background-color: #5465FF;
+    background-color: #4d99e7;
     padding: 1rem;
     border: 0.15rem solid white;
     border-radius: 1rem;

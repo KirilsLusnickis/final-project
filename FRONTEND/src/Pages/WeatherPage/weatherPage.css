@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body, html {
+.bigWrapper {
   background-image: radial-gradient(
     circle 993px at 0.5% 50.5%,
     #bfd7ff 0%,

@@ -3,6 +3,7 @@ import WeatherComponent from "../../Components/WeatherComponent/WeatherComponent
 import { convertTime } from "../../Utils/weatherUtils";
 import weatherAPI from "../../Utils/weatherAPI";
 import "./weatherPage.css";
+import TopBar from "../../Components/topBar/TopBar";
 
 
 function WeatherPage() {
@@ -38,6 +39,9 @@ function WeatherPage() {
   ];
 
   return weatherData && !weatherData.message ? (
+    <>
+    <TopBar/>
+    <div className="bigWrapper">
     <div className="wrapper">
       <div className="weatherWrapper">
         <h1 className="locationTitle">
@@ -94,7 +98,11 @@ function WeatherPage() {
         <WeatherComponent data={weatherData} />
       </div>
     </div>
+    </div>
+    </>
   ) : weatherData && weatherData.message ? (
+    <>
+    <TopBar/>
     <div className="errScr">
       <div>
         <h1 style={{ marginBottom: "30px" }}>
@@ -112,6 +120,7 @@ function WeatherPage() {
         />
       </div>
     </div>
+    </>
   ) : (
     <div className="errScr">
       <h1>🐈Loading🐈</h1>
