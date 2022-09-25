@@ -43,9 +43,50 @@ img {
   text-align: center;
   opacity: 0.8;
   cursor: default ;
-  font-size: 1.6vw;
 } 
 
 .mainBodyText {
     display: flex;
+    font-size: 2vw;
+}
+
+.mainBodyHeader {
+	-webkit-animation: mainBodyHeader 1.3s ease-in both;
+	animation: mainBodyHeader 1.3s ease-in both;
+  font-size: 4vw;
+}
+
+
+
+ @-webkit-keyframes mainBodyHeader {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(-500px);
+            transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes mainBodyHeader {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px) translateY(-500px);
+            transform: translateZ(-700px) translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
 }

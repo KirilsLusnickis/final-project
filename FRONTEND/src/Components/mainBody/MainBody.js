@@ -7,12 +7,10 @@ const MainBody = () => {
     <div className="mainBody">
       <div className="mainBodyWrapper">
         <div className="mainBodyContainer">
-          <h1 className="mainBodyHeader">ABOUT US</h1>
+          <h1 className="mainBodyHeader">WEATHER</h1>
           <p className="mainBodyText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
-            similique rep ellendus magni et aut, ad possimus, illum esse omnis
-            culpa est perspiciatis beatae? Reprehenderit incidunt eum dicta
-            impedit, sit dolore!
+            The best application where everything is selected especially for you
+            and your friends
           </p>
         </div>
       </div>
