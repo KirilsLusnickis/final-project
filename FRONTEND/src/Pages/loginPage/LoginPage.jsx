@@ -1,5 +1,5 @@
-import Register from "../../Components/Register/Register";
-import "./registerPage.css";
+import Login from "../../Components/Login/Login";
+import "./loginPage.css";
 
 const RegisterPage = () => {
 
@@ -10,15 +10,7 @@ const RegisterPage = () => {
     </video>
     <div className="main">
       <div className="register">
-        <Register 
-            heading={"REGISTRATION"}
-            firstelem={"USERNAME"}
-            secondelem={"E-MAIL"}
-            thirdelem={"CITY"}
-            fourthelem={"PASSWORD"}
-            btnContent={"REGISTER"}
-            successContent={"SUCCESSFULLY REGISTERED!!!"}
-        />
+        <Login/>
       </div>
     </div>
     </>
