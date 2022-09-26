@@ -4,7 +4,7 @@ import "./login.css";
 import { Link } from "react-router-dom";
 import LoginResult from "../Register/helpingComponents/LoginResult";
 
-const Login = () => {
+const Login = ({header, input1, input2, btnContent, question, altBtn}) => {
   const [loginData, setLoginData] = useState({
     userName: "",
     password: "",
@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:3001/api/login",
+        "https://boiling-dusk-43878.herokuapp.com/api/login",
         loginData,
         { withCredentials: true }
       );
@@ -48,7 +48,7 @@ const Login = () => {
     <>
       <div className="loginWrapper">
       <div className="loginContentWrapper">
-        <h1>LOGIN</h1>
+        <h1>{header}</h1>
         <Link to = "/">
           <span className="icon">
             <i className="fa-solid fa-house"></i>
@@ -57,7 +57,7 @@ const Login = () => {
         {display === 0 && (
           <div className="formLoginWrapper">
             <div className="formLoginItem">
-              <label>username</label>
+              <label>{input1}</label>
               <input className="logininput"
                 onChange={handleLoginInput}
                 name="userName"
@@ -66,7 +66,7 @@ const Login = () => {
               />
             </div>
             <div className="formLoginItem">
-              <label>password</label>
+              <label>{input2}</label>
               <input className="logininput"
                 onChange={handleLoginInput}
                 name="password"
@@ -82,10 +82,10 @@ const Login = () => {
                   changeView(1,2);
                 }}
               >
-                LOGIN
+                {btnContent}
               </button>
             </div>
-            <div className="question">Don't have an account? <Link to="/register"> <button className="btn btnLog">Register</button></Link></div>
+            <div className="question">{question} <Link to="/register"> <button className="btn btnLog">{altBtn}</button></Link></div>
           </div>
         )}
         {display === 1 && (

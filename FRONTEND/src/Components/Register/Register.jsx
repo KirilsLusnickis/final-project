@@ -10,8 +10,7 @@ const Register = ({
   secondelem,
   thirdelem,
   fourthelem,
-  btnContent,
-  successContent,
+  btnContent
 }) => {
   const [registerData, setRegisterData] = useState({
     userName: "",
@@ -31,7 +30,7 @@ const Register = ({
 
   const handleRegisterSubmit = async () => {
     try {
-      await axios.post("http://localhost:3001/api/register", registerData);
+      await axios.post("https://boiling-dusk-43878.herokuapp.com/api/register", registerData);
     } catch (error) {
       console.log(error);
       setErrorStatus(error.response.status);

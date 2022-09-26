@@ -5,7 +5,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate,
+  Navigate
 } from "react-router-dom";
 import io from "socket.io-client";
 import ChatHome from "./Components/Chat/chatHome/ChatHome";
@@ -17,6 +17,7 @@ import LoginPage from "./Pages/loginPage/LoginPage";
 import WeatherPage from "./Pages/WeatherPage/WeatherPage";
 
 const socket = io.connect("https://whispering-headland-00234.herokuapp.com");
+
 
 function App() {
   const [username, setUsername] = useState("");

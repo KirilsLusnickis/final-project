@@ -8,11 +8,11 @@ const ChatApp = ({ username, room, socket, chatname }) => {
   return (
     <div className="mainContainer">
       <div className="chatContainer">
-        <RoomAndUsers socket={socket} username={username} room={room} chatname={chatname}/>
+        <RoomAndUsers socket={socket} username={username} room={room} chatname={chatname} btnContent={'LEAVE'}/>
         <div>
           <Messages socket={socket} />
 
-          <SendMessage socket={socket} username={username} room={room} chatname={chatname} />
+          <SendMessage socket={socket} username={username} room={room} chatname={chatname} btnContent={'SEND'}/>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import "./chatApp.css";
 import React, { useState } from 'react';
 
-const SendMessage = ({ socket, username, room, chatname }) => {
+const SendMessage = ({ socket, username, room, chatname, btnContent }) => {
   const [message, setMessage] = useState('');
 
 
@@ -22,7 +22,7 @@ const SendMessage = ({ socket, username, room, chatname }) => {
         value={message}
       />
       <button className="btnApp" onClick={sendMessage}>
-      SEND
+      {btnContent}
       </button>
     </div>
   );
