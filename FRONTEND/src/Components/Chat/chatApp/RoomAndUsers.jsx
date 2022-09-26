@@ -2,7 +2,7 @@ import "./chatApp.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const RoomAndUsers = ({ socket, username, room, chatname }) => {
+const RoomAndUsers = ({ socket, username, room, chatname, btnContent }) => {
   const [roomUsers, setRoomUsers] = useState([]);
 
   const navigate = useNavigate();
@@ -19,9 +19,9 @@ const RoomAndUsers = ({ socket, username, room, chatname }) => {
   const leaveRoom = () => {
     const __createdtime__ = Date.now();
     socket.emit("leave_room", { chatname, room, __createdtime__ });
-    // Redirect to home page
     navigate("/", { replace: true });
   };
+
 
   return (
     <div className="roomAndUsersColumn">
@@ -44,10 +44,12 @@ const RoomAndUsers = ({ socket, username, room, chatname }) => {
       </div>
       <div className="btnRoom">
         <button className="btnApp" onClick={leaveRoom}>
-          LEAVE
+          {btnContent}
         </button>
+
       </div>
     </div>
+
   );
 };
 

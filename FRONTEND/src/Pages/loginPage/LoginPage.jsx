@@ -7,7 +7,14 @@ const RegisterPage = () => {
     <>
     <div className="main">
       <div className="login">
-        <Login/>
+        <Login
+          header={'LOGIN'}
+          input1={'username'}
+          input2={'password'}
+          btnContent={'LOGIN'}
+          question={`Don't have an account yet?`}
+          altBtn={'REGISTER'}
+        />
       </div>
     </div>
     </>
